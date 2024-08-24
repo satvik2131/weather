@@ -40,15 +40,6 @@ function WeatherCard() {
           <div className="text-4xl font-extrabold text-white mb-4">
             {weatherData.temperature}°c
           </div>
-          {weatherData.message !== "" || weatherData.temperature == null ? (
-            <div className="max-w-md mx-auto p-4 bg-white border border-gray-300 rounded-lg shadow-sm">
-              <p className="text-center text-red-500 font-semibold">
-                Can&apos;t fetch data for this location
-              </p>
-            </div>
-          ) : (
-            ""
-          )}
 
           <div className="flex flex-col space-y-2">
             <WeatherInfoKeyValue

@@ -38,7 +38,7 @@ function WeatherCard() {
           {/* <h2 className="text-xl font-bold text-white mb-2">{weatherType}</h2> */}
           <p className="text-lg text-white mb-2">{weatherData.cityName}</p>
           <div className="text-4xl font-extrabold text-white mb-4">
-            {weatherData.temperature}°
+            {weatherData.temperature}°c
           </div>
           {weatherData.message !== "" || weatherData.temperature == null ? (
             <div className="max-w-md mx-auto p-4 bg-white border border-gray-300 rounded-lg shadow-sm">

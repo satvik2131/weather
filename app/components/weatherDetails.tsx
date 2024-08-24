@@ -23,7 +23,6 @@ function WeatherCard() {
     : "absolute bottom-0 max-w-sm";
 
   const pending = weatherData.pending;
-  console.log(pending);
 
   {
     if (pending) {
@@ -44,7 +43,7 @@ function WeatherCard() {
           {weatherData.message !== "" || weatherData.temperature == null ? (
             <div className="max-w-md mx-auto p-4 bg-white border border-gray-300 rounded-lg shadow-sm">
               <p className="text-center text-red-500 font-semibold">
-                Can't fetch data for this location
+                Can&apos;t fetch data for this location
               </p>
             </div>
           ) : (

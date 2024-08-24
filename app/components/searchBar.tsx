@@ -3,20 +3,15 @@
 import React, { useState } from "react";
 import locations from "../locations/locations.json";
 import { ReactSearchAutocomplete } from "react-search-autocomplete";
-import { setLocation } from "../../redux/features/locationSearchBarSlice";
+import {
+  WeatherData,
+  setLocation,
+} from "../../redux/features/weatherDataSlice";
 import { useAppDispatch } from "@/redux/hooks";
 
 interface SearchBarProps {
   onSearch?: (query: string) => void;
 }
-
-type ResultItem = {
-  cityName: string;
-  localityName: string;
-  localityId: string;
-  latitude: number;
-  longitude: number;
-};
 
 export const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
   const [query, setQuery] = useState<string>("");
@@ -31,16 +26,16 @@ export const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
 
   const handleOnSearch = (
     searchString: string,
-    results: ResultItem[]
+    results: WeatherData[]
   ): void => {
     console.log(searchString, results);
   };
 
-  const handleOnHover = (result: ResultItem): void => {
+  const handleOnHover = (result: WeatherData): void => {
     console.log(result);
   };
 
-  const handleOnSelect = (item: ResultItem): void => {
+  const handleOnSelect = (item: WeatherData): void => {
     dispatch(setLocation(item));
   };
 
@@ -48,7 +43,7 @@ export const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
     console.log("Focused");
   };
 
-  const formatResult = (item: ResultItem): JSX.Element => {
+  const formatResult = (item: WeatherData): JSX.Element => {
     return (
       <>
         <span className="text-left">

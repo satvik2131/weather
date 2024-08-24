@@ -1,9 +1,9 @@
 import { configureStore, ConfigureStoreOptions } from "@reduxjs/toolkit";
-import locationSearchBarReducer from "../features/locationSearchBarSlice";
+import weatherDataReducer from "../features/weatherDataSlice";
 
 export const store = configureStore({
   reducer: {
-    location: locationSearchBarReducer,
+    weatherData: weatherDataReducer,
   },
 });
 

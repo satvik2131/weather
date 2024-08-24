@@ -29,7 +29,7 @@ export interface WeatherData {
   humidity?: number | undefined;
   windSpeed?: number | undefined;
   windDirection?: number | undefined;
-  pending: boolean;
+  pending?: boolean;
   message?: string;
 }
 

@@ -16,7 +16,7 @@ function WeatherCard() {
 
   useEffect(() => {
     dispatch(fetchWeather());
-  }, [weatherData.longitude, weatherData.latitude]);
+  }, [weatherData.longitude, weatherData.latitude, dispatch]);
 
   const cardPos = cardClicked
     ? "relative max-w-lg"
